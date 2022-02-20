@@ -5,9 +5,9 @@
  console.log("feeData",feeData.gasPrice?.toString(), feeData.maxFeePerGas?.toString(), feeData.maxPriorityFeePerGas?.toString(),);
  const format = ethers.utils.formatUnits( ethers.BigNumber.from(feeData?.maxPriorityFeePerGas), "gwei");
  console.log("format maxPriorityFeePerGas",format)
- const gRole = await nftMarket.grantTokenListRole(addr).send({
-  "maxPriorityFee":feeData?.maxPriorityFeePerGas,
-  "maxFee":feeData?.maxFeePerGas
-  });;
+ const gRole = await nftMarket.grantTokenListRole(addr,{
+          "maxPriorityFeePerGas":feeData?.maxPriorityFeePerGas,
+          "maxFeePerGas":feeData?.maxFeePerGas
+        });
         
         
